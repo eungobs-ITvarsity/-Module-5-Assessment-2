@@ -1,157 +1,407 @@
 <!DOCTYPE html>
+<!-- Document type declaration - tells the browser this is an HTML5 document -->
+<!-- This must be the very first line in an HTML document -->
+
 <html lang="en">
+<!-- Root HTML element - contains all content on the page -->
+<!-- lang="en" specifies the document language as English -->
+<!-- This helps screen readers and search engines understand the content language -->
+
 <head>
+    <!-- Head section - contains metadata about the document -->
+    <!-- Content here is not displayed on the page but provides information to browsers and search engines -->
+    
     <meta charset="UTF-8">
+    <!-- Character encoding declaration -->
+    <!-- UTF-8 supports virtually all characters from all languages -->
+    <!-- Ensures special characters, symbols, and emojis display correctly -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport meta tag - essential for responsive web design -->
+    <!-- width=device-width: sets the page width to match the device's screen width -->
+    <!-- initial-scale=1.0: sets the initial zoom level when page first loads -->
+    <!-- Without this, mobile devices would render page at desktop width and zoom out -->
+    
     <title>Auto4Sale - Home</title>
+    <!-- Page title - displayed in browser tab/window title bar -->
+    <!-- Also used by search engines as the clickable headline in search results -->
+    <!-- Format: "Company Name - Page Name" is a common SEO-friendly pattern -->
+    
     <link rel="stylesheet" href="styles.css">
+    <!-- External CSS stylesheet link -->
+    <!-- rel="stylesheet" defines the relationship as a stylesheet -->
+    <!-- href="styles.css" specifies the path to the CSS file -->
+    <!-- External stylesheets allow for separation of concerns and caching -->
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Body section - contains all visible content displayed in the browser -->
+    <!-- Everything users see and interact with is placed within the body tags -->
+
+    <!-- ==================== NAVIGATION SECTION ==================== -->
+    <!-- Primary navigation bar - appears at the top of every page -->
+    <!-- Uses semantic <nav> element for accessibility and SEO benefits -->
     <nav class="navbar">
+        
+        <!-- Company Logo/Brand Section -->
         <div class="logo">
             <h1>Auto<span>4Sale</span></h1>
+            <!-- Company name split with <span> for styling purposes -->
+            <!-- The <span> allows "4Sale" to have different color/style -->
+            <!-- Using h1 in logo is acceptable when it represents the main brand -->
         </div>
+        
+        <!-- Navigation Links - Main Menu -->
+        <!-- Unordered list is semantically correct for navigation menus -->
         <ul class="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
+            <!-- "active" class indicates this is the current/selected page -->
+            <!-- CSS will style this link differently to show user's location -->
+            
             <li><a href="vehicles.html">Vehicles</a></li>
+            <!-- Link to the vehicles listing page -->
+            
             <li><a href="contact.html">Contact Us</a></li>
+            <!-- Link to the contact page -->
         </ul>
+        
+        <!-- Hamburger Menu Icon - For Mobile Navigation -->
+        <!-- Hidden on desktop, displayed on mobile devices -->
+        <!-- onclick event calls toggleMenu() function defined in script.js -->
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
+            <!-- Three spans create the three horizontal lines (≡) of hamburger icon -->
+            <!-- CSS transforms these spans; JavaScript toggles the menu visibility -->
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ==================== HERO SECTION ==================== -->
+    <!-- Hero section - large banner area at the top of the homepage -->
+    <!-- Uses <header> element as it introduces the main content of the page -->
+    <!-- This is typically the first thing visitors see (above the fold) -->
     <header class="hero">
+        
+        <!-- Hero Content Container -->
+        <!-- Centers and constrains the text content within the hero -->
         <div class="hero-content">
+            
             <h1>Find Your Dream Car Today</h1>
+            <!-- Main headline/tagline - primary message to visitors -->
+            <!-- Should be compelling and clearly communicate the value proposition -->
+            <!-- h1 is appropriate here as main page heading -->
+            
             <p>Quality vehicles at affordable prices</p>
+            <!-- Supporting subheadline - elaborates on the main message -->
+            <!-- Reinforces the brand promise and value -->
+            
             <a href="vehicles.html" class="btn">Browse Vehicles</a>
+            <!-- Call-to-Action (CTA) button -->
+            <!-- Links to vehicles page to encourage user engagement -->
+            <!-- "btn" class applies button styling from CSS -->
+            <!-- CTAs should be clear, action-oriented, and visually prominent -->
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <!-- About section - provides company information and builds trust -->
+    <!-- Uses semantic <section> element to define a thematic grouping of content -->
+    <!-- id="about" allows direct linking to this section (e.g., page.html#about) -->
     <section class="about" id="about">
+        
+        <!-- Container - provides consistent max-width and centering -->
         <div class="container">
+            
             <h2>About Auto4Sale</h2>
+            <!-- Section heading - h2 is appropriate for main section titles -->
+            <!-- Maintains proper heading hierarchy (h1 > h2 > h3) -->
+            
+            <!-- About Content Grid - two-column layout -->
             <div class="about-content">
+                
+                <!-- Left Column: Text Content -->
                 <div class="about-text">
+                    
                     <p>Welcome to <strong>Auto4Sale</strong>, your trusted partner in finding the perfect vehicle. Established in 2010, we have been serving customers with quality pre-owned and new vehicles for over a decade.</p>
+                    <!-- Introduction paragraph -->
+                    <!-- <strong> emphasizes the brand name (also has semantic importance) -->
+                    <!-- Establishes credibility by mentioning years in business -->
+                    
                     <p>Our mission is to provide exceptional customer service and offer a wide range of vehicles to suit every budget and lifestyle. We believe that everyone deserves to drive a reliable car without breaking the bank.</p>
+                    <!-- Mission statement paragraph -->
+                    <!-- Communicates company values and customer-focused approach -->
+                    
                     <h3>Why Choose Us?</h3>
+                    <!-- Subsection heading - h3 maintains hierarchy under h2 -->
+                    <!-- Introduces the benefits/features list -->
+                    
+                    <!-- Benefits/Features List -->
+                    <!-- Unordered list for non-sequential items -->
                     <ul>
                         <li>✓ Over 500+ satisfied customers</li>
+                        <!-- Social proof - demonstrates track record -->
+                        
                         <li>✓ Certified pre-owned vehicles</li>
+                        <!-- Quality assurance - vehicles are inspected/certified -->
+                        
                         <li>✓ Flexible financing options</li>
+                        <!-- Accessibility - makes purchase easier for customers -->
+                        
                         <li>✓ 30-day money-back guarantee</li>
+                        <!-- Risk reversal - reduces purchase anxiety -->
+                        
                         <li>✓ Free vehicle history reports</li>
+                        <!-- Added value - transparency about vehicle history -->
+                        
+                        <!-- ✓ (checkmark) emoji used for visual emphasis -->
+                        <!-- Creates scannable list that highlights key benefits -->
                     </ul>
                 </div>
+                
+                <!-- Right Column: Image -->
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500" alt="Car Showroom">
+                    <!-- Showroom image from Unsplash (free stock photo service) -->
+                    <!-- ?w=500 parameter requests a 500px wide version (Unsplash feature) -->
+                    <!-- alt attribute provides description for accessibility -->
+                    <!-- Screen readers will read "Car Showroom" for visually impaired users -->
+                    <!-- Also displays if image fails to load -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Vehicles Section -->
+    <!-- ==================== FEATURED VEHICLES SECTION ==================== -->
+    <!-- Featured section - showcases highlighted/promoted vehicles -->
+    <!-- Purpose: Draw attention to specific inventory and encourage browsing -->
     <section class="featured">
+        
         <div class="container">
+            <!-- Container for consistent width and centering -->
+            
             <h2>Featured Vehicles</h2>
+            <!-- Section heading -->
+            
             <p class="section-subtitle">Check out our top picks this month</p>
+            <!-- Section subtitle - provides context for the featured selection -->
+            <!-- "this month" implies freshness and regular updates -->
+            
+            <!-- Vehicle Cards Grid -->
+            <!-- CSS Grid or Flexbox likely used for responsive card layout -->
             <div class="vehicle-grid">
-                <!-- Vehicle 1 -->
+                
+                <!-- ========== VEHICLE CARD 1 - BMW 3 Series ========== -->
+                <!-- Individual vehicle card - modular, reusable component -->
                 <div class="vehicle-card">
+                    
+                    <!-- Vehicle Image Section -->
                     <div class="vehicle-image">
                         <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400" alt="BMW 3 Series">
+                        <!-- Vehicle photo from Unsplash -->
+                        <!-- ?w=400 requests 400px width for faster loading -->
+                        <!-- Descriptive alt text for accessibility -->
+                        
                         <span class="badge">Featured</span>
+                        <!-- Badge overlay on the image -->
+                        <!-- Indicates this is a featured/promoted vehicle -->
+                        <!-- CSS positions this absolutely over the image -->
                     </div>
+                    
+                    <!-- Vehicle Information Section -->
                     <div class="vehicle-info">
+                        
                         <h3>2022 BMW 3 Series</h3>
+                        <!-- Vehicle title: Year + Make + Model -->
+                        <!-- h3 maintains heading hierarchy (section h2 > card h3) -->
+                        
                         <p class="price">R 650,000</p>
+                        <!-- Price displayed in South African Rand (ZAR) -->
+                        <!-- "price" class allows specific styling (color, size, weight) -->
+                        
+                        <!-- Quick Specifications List -->
+                        <!-- Uses emojis for visual icons - improves scannability -->
                         <ul class="specs">
                             <li>🚗 Sedan</li>
+                            <!-- Car emoji + body type -->
+                            
                             <li>⚙️ Automatic</li>
+                            <!-- Gear emoji + transmission type -->
+                            
                             <li>📏 25,000 km</li>
+                            <!-- Ruler emoji + mileage/odometer reading -->
                         </ul>
+                        
                         <a href="vehicles.html" class="btn btn-small">View Details</a>
+                        <!-- CTA button linking to vehicles page -->
+                        <!-- "btn btn-small" applies base button style + smaller variant -->
+                        <!-- In production, this might link to specific vehicle detail page -->
                     </div>
                 </div>
 
-                <!-- Vehicle 2 -->
+                <!-- ========== VEHICLE CARD 2 - Mercedes-Benz C-Class ========== -->
+                <!-- Second featured vehicle card - same structure as Card 1 -->
                 <div class="vehicle-card">
+                    
                     <div class="vehicle-image">
-                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400" alt="Mercedes-Benz C-Class">
+                        <img src="https://i.pinimg.com/736x/35/39/b1/3539b167f940490b6ee0343122335f71.jpg" alt="Mercedes-Benz C-Class">
+                        <!-- Mercedes-Benz image -->
+                        
                         <span class="badge">Featured</span>
+                        <!-- Featured badge -->
                     </div>
+                    
                     <div class="vehicle-info">
                         <h3>2021 Mercedes-Benz C-Class</h3>
+                        <!-- Premium sedan - higher price point -->
+                        
                         <p class="price">R 720,000</p>
+                        <!-- Highest priced featured vehicle -->
+                        
                         <ul class="specs">
                             <li>🚗 Sedan</li>
                             <li>⚙️ Automatic</li>
                             <li>📏 30,000 km</li>
                         </ul>
+                        
                         <a href="vehicles.html" class="btn btn-small">View Details</a>
                     </div>
                 </div>
 
-                <!-- Vehicle 3 -->
+                <!-- ========== VEHICLE CARD 3 - Volkswagen Golf ========== -->
+                <!-- Third featured vehicle card - different body type for variety -->
                 <div class="vehicle-card">
+                    
                     <div class="vehicle-image">
-                        <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=400" alt="Volkswagen Golf">
+                        <img src="https://i.pinimg.com/1200x/c0/4f/7a/c04f7a80181d9c7c5bc386842b6c5e24.jpg" alt="Volkswagen Golf">
+                        <!-- Volkswagen Golf image -->
+                        
                         <span class="badge">Featured</span>
+                        <!-- Featured badge -->
                     </div>
+                    
                     <div class="vehicle-info">
                         <h3>2023 Volkswagen Golf 8</h3>
+                        <!-- Newest model year in featured selection -->
+                        <!-- "8" refers to 8th generation Golf -->
+                        
                         <p class="price">R 480,000</p>
+                        <!-- Most affordable of the three featured vehicles -->
+                        <!-- Provides price range variety for different budgets -->
+                        
                         <ul class="specs">
                             <li>🚗 Hatchback</li>
+                            <!-- Different body type - provides variety -->
+                            
                             <li>⚙️ DSG</li>
+                            <!-- DSG = Direct Shift Gearbox -->
+                            <!-- VW's dual-clutch automatic transmission -->
+                            
                             <li>📏 10,000 km</li>
+                            <!-- Lowest mileage - nearly new vehicle -->
                         </ul>
+                        
                         <a href="vehicles.html" class="btn btn-small">View Details</a>
                     </div>
                 </div>
             </div>
+            <!-- End of vehicle-grid -->
+            
+            <!-- View All CTA Section -->
+            <!-- Centered button to see complete inventory -->
             <div class="text-center">
+                <!-- Utility class for text-align: center -->
+                
                 <a href="vehicles.html" class="btn">View All Vehicles</a>
+                <!-- Main CTA button linking to full vehicles listing -->
+                <!-- Encourages users to explore beyond featured items -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Footer - appears at the bottom of every page -->
+    <!-- Contains company info, navigation, contact details, and legal info -->
+    <!-- Semantic <footer> element identifies this as the page footer -->
     <footer class="footer">
+        
         <div class="container">
+            <!-- Container for consistent width -->
+            
+            <!-- Footer Content Grid - multiple columns -->
             <div class="footer-content">
+                
+                <!-- Footer Column 1: Company Information -->
                 <div class="footer-section">
                     <h3>Auto<span>4Sale</span></h3>
+                    <!-- Company logo/name - matches header for brand consistency -->
+                    <!-- <span> allows different styling on "4Sale" portion -->
+                    
                     <p>Your trusted partner in finding the perfect vehicle since 2010.</p>
+                    <!-- Company tagline/description -->
+                    <!-- Reinforces brand message and establishes history -->
                 </div>
+                
+                <!-- Footer Column 2: Quick Navigation Links -->
                 <div class="footer-section">
                     <h4>Quick Links</h4>
+                    <!-- Column heading - h4 appropriate for footer subsections -->
+                    
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="vehicles.html">Vehicles</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <!-- Duplicate navigation links for accessibility -->
+                        <!-- Allows users to navigate from bottom of page -->
+                        <!-- Also helps search engines discover all pages -->
                     </ul>
                 </div>
+                
+                <!-- Footer Column 3: Contact Information -->
                 <div class="footer-section">
                     <h4>Contact Info</h4>
+                    <!-- Column heading -->
+                    
                     <p>📍 123 Main Road, Johannesburg</p>
+                    <!-- Physical address with location pin emoji -->
+                    <!-- Johannesburg is a major city in South Africa -->
+                    
                     <p>📞 011 123 4567</p>
+                    <!-- Phone number with telephone emoji -->
+                    <!-- 011 is the area code for Johannesburg, South Africa -->
+                    
                     <p>✉️ info@auto4sale.co.za</p>
+                    <!-- Email address with envelope emoji -->
+                    <!-- .co.za is the country code top-level domain for South Africa -->
+                    <!-- Generic "info@" address is common for business inquiries -->
                 </div>
             </div>
+            
+            <!-- Footer Bottom: Copyright Notice -->
             <div class="footer-bottom">
                 <p>&copy; 2024 Auto4Sale. All rights reserved.</p>
+                <!-- Copyright notice -->
+                <!-- &copy; is HTML entity for © (copyright symbol) -->
+                <!-- Year should be updated annually or generated dynamically -->
+                <!-- "All rights reserved" is standard legal language -->
             </div>
+            
         </div>
     </footer>
 
+    <!-- ==================== JAVASCRIPT FILE ==================== -->
+    <!-- External JavaScript file link -->
+    <!-- Placed at the bottom of body for performance reasons: -->
+    <!-- 1. HTML content loads and displays first -->
+    <!-- 2. User can see the page while JS downloads -->
+    <!-- 3. DOM is fully loaded when script executes -->
     <script src="script.js"></script>
+    <!-- This file contains: -->
+    <!-- - toggleMenu() function for mobile navigation -->
+    <!-- - Any other interactive functionality -->
+    
 </body>
+<!-- End of body - all visible content above this line -->
+
 </html>
+<!-- End of HTML document -->

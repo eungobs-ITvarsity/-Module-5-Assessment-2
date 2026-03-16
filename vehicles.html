@@ -1,141 +1,254 @@
 <!DOCTYPE html>
+<!-- Document type declaration - tells the browser this is an HTML5 document -->
+
 <html lang="en">
+<!-- Root HTML element with language attribute set to English for accessibility and SEO -->
+
 <head>
+    <!-- Head section contains metadata and links to external resources -->
+    
     <meta charset="UTF-8">
+    <!-- Character encoding set to UTF-8 to support international characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport meta tag for responsive design - ensures proper scaling on mobile devices -->
+    
     <title>Auto4Sale - Vehicles</title>
+    <!-- Page title displayed in browser tab and used by search engines -->
+    
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to external CSS stylesheet for page styling -->
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Body section contains all visible content on the page -->
+
+    <!-- ==================== NAVIGATION SECTION ==================== -->
+    <!-- Main navigation bar that appears at the top of every page -->
     <nav class="navbar">
+        
+        <!-- Logo/Brand section -->
         <div class="logo">
             <h1>Auto<span>4Sale</span></h1>
+            <!-- Company name with span for different styling on "4Sale" -->
         </div>
+        
+        <!-- Navigation links for desktop view -->
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <!-- Link to home page -->
+            
             <li><a href="vehicles.html" class="active">Vehicles</a></li>
+            <!-- Link to vehicles page - "active" class indicates current page -->
+            
             <li><a href="contact.html">Contact Us</a></li>
+            <!-- Link to contact page -->
         </ul>
+        
+        <!-- Hamburger menu icon for mobile navigation -->
+        <!-- toggleMenu() function is called when clicked to show/hide mobile menu -->
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
+            <!-- Three spans create the three horizontal lines of hamburger icon -->
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ==================== PAGE HEADER SECTION ==================== -->
+    <!-- Hero/banner section at the top of the page with title -->
     <div class="page-header">
         <h1>Our Vehicles</h1>
+        <!-- Main page heading -->
+        
         <p>Browse our selection of quality vehicles</p>
+        <!-- Subtitle/description text -->
     </div>
 
-    <!-- Filter Section -->
+    <!-- ==================== FILTER SECTION ==================== -->
+    <!-- Section containing dropdown filters to sort/filter vehicle listings -->
     <section class="filter-section">
         <div class="container">
+            <!-- Container for consistent width and centering -->
+            
             <div class="filters">
+                <!-- Wrapper for all filter dropdowns -->
+                
+                <!-- Brand Filter Dropdown -->
+                <!-- onchange event triggers filterVehicles() function when selection changes -->
                 <select id="brandFilter" onchange="filterVehicles()">
                     <option value="all">All Brands</option>
+                    <!-- Default option to show all brands -->
                     <option value="bmw">BMW</option>
                     <option value="mercedes">Mercedes-Benz</option>
                     <option value="volkswagen">Volkswagen</option>
                     <option value="toyota">Toyota</option>
                     <option value="ford">Ford</option>
+                    <!-- Each option value corresponds to data-brand attribute on vehicle cards -->
                 </select>
+                
+                <!-- Price Range Filter Dropdown -->
                 <select id="priceFilter" onchange="filterVehicles()">
                     <option value="all">All Prices</option>
+                    <!-- Default option to show all price ranges -->
                     <option value="0-300000">Under R 300,000</option>
                     <option value="300000-500000">R 300,000 - R 500,000</option>
                     <option value="500000-800000">R 500,000 - R 800,000</option>
                     <option value="800000+">Over R 800,000</option>
+                    <!-- Price ranges in South African Rand (ZAR) -->
                 </select>
+                
+                <!-- Vehicle Type Filter Dropdown -->
                 <select id="typeFilter" onchange="filterVehicles()">
                     <option value="all">All Types</option>
+                    <!-- Default option to show all vehicle types -->
                     <option value="sedan">Sedan</option>
                     <option value="suv">SUV</option>
                     <option value="hatchback">Hatchback</option>
                     <option value="bakkie">Bakkie</option>
+                    <!-- "Bakkie" is South African term for pickup truck -->
                 </select>
             </div>
         </div>
     </section>
 
-    <!-- Vehicles Listing -->
+    <!-- ==================== VEHICLES LISTING SECTION ==================== -->
+    <!-- Main section containing all vehicle cards/listings -->
     <section class="vehicles-section">
         <div class="container">
             <div class="vehicles-list">
+                <!-- Container for all individual vehicle listings -->
                 
-                <!-- Vehicle 1 - BMW 3 Series -->
+                <!-- ========== VEHICLE 1 - BMW 3 Series ========== -->
+                <!-- Each vehicle listing has data attributes for filtering -->
+                <!-- data-brand: used by brand filter -->
+                <!-- data-price: used by price filter (numeric value without formatting) -->
+                <!-- data-type: used by vehicle type filter -->
                 <div class="vehicle-listing" data-brand="bmw" data-price="650000" data-type="sedan">
+                    
+                    <!-- Vehicle Image Gallery Section -->
                     <div class="vehicle-gallery">
+                        
+                        <!-- Main/Primary Image Display -->
                         <div class="main-image">
                             <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" alt="BMW 3 Series" id="bmw-main">
+                            <!-- id="bmw-main" is used by changeImage() function to update this image -->
+                            <!-- alt attribute provides description for accessibility and SEO -->
                         </div>
+                        
+                        <!-- Thumbnail Images for Gallery -->
+                        <!-- Clicking thumbnails calls changeImage() to swap the main image -->
                         <div class="thumbnail-images">
                             <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=150" alt="BMW 3 Series" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                            <!-- onclick: calls changeImage() with target id and larger version of image URL -->
+                            <!-- this.src.replace() changes thumbnail URL to full-size URL -->
+                            
                             <img src="https://i.pinimg.com/736x/b5/b9/01/b5b901fe4b842b35ef50bc48a45cc16c.jpg" alt="BMW Interior" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                            <!-- Interior view thumbnail -->
+                            
                             <img src="https://i.pinimg.com/1200x/0c/9d/c7/0c9dc764b365ac4b026a3bda2abb3737.jpg" alt="BMW Wheels" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                            <!-- Wheels/exterior detail thumbnail -->
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details Section -->
                     <div class="vehicle-details">
+                        
                         <h2>2022 BMW 3 Series 320i M Sport</h2>
+                        <!-- Vehicle title with year, make, model, and trim -->
+                        
                         <p class="price">R 650,000</p>
+                        <!-- Price displayed in South African Rand -->
+                        
+                        <!-- Specifications Grid -->
+                        <!-- Displays key vehicle specifications in a grid layout -->
                         <div class="specs-grid">
+                            
+                            <!-- Individual Specification Item -->
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
+                                <!-- Label for the specification -->
                                 <span class="spec-value">2022</span>
+                                <!-- Value of the specification -->
                             </div>
+                            
                             <div class="spec-item">
                                 <span class="spec-label">Mileage</span>
                                 <span class="spec-value">25,000 km</span>
+                                <!-- Odometer reading in kilometers -->
                             </div>
+                            
                             <div class="spec-item">
                                 <span class="spec-label">Transmission</span>
                                 <span class="spec-value">Automatic</span>
                             </div>
+                            
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
                                 <span class="spec-value">Petrol</span>
                             </div>
+                            
                             <div class="spec-item">
                                 <span class="spec-label">Color</span>
                                 <span class="spec-value">Alpine White</span>
+                                <!-- BMW's official color name -->
                             </div>
+                            
                             <div class="spec-item">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">2.0L Turbo</span>
+                                <!-- Engine displacement and type -->
                             </div>
                         </div>
+                        
+                        <!-- Features List Section -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
+                                <!-- List of vehicle features/options -->
                                 <li>✓ M Sport Package</li>
                                 <li>✓ Navigation System</li>
                                 <li>✓ Leather Seats</li>
                                 <li>✓ Sunroof</li>
                                 <li>✓ Reverse Camera</li>
                                 <li>✓ Bluetooth</li>
+                                <!-- Checkmark emoji (✓) used for visual indication -->
                             </ul>
                         </div>
+                        
+                        <!-- Call-to-Action Button -->
                         <a href="contact.html" class="btn">Enquire Now</a>
+                        <!-- Links to contact page for customer inquiries -->
                     </div>
                 </div>
 
-                <!-- Vehicle 2 - Mercedes-Benz C-Class -->
+                <!-- ========== VEHICLE 2 - Mercedes-Benz C-Class ========== -->
+                <!-- Premium sedan listing with Mercedes-Benz specific features -->
                 <div class="vehicle-listing" data-brand="mercedes" data-price="720000" data-type="sedan">
+                    
+                    <!-- Vehicle Image Gallery -->
                     <div class="vehicle-gallery">
                         <div class="main-image">
                             <img src="https://i.pinimg.com/1200x/67/78/04/677804e82612122490898ecfc3dc38b9.jpg" alt="Mercedes-Benz C-Class" id="merc-main">
+                            <!-- id="merc-main" for JavaScript image switching -->
                         </div>
+                        
+                        <!-- Thumbnail Gallery -->
                         <div class="thumbnail-images">
                             <img src="https://i.pinimg.com/1200x/1a/80/69/1a8069726596688dd87619e0bfcc227d.jpg" alt="Mercedes Exterior" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/85/de/95/85de951ed84d7520d2a985e28bff8864.jpg" alt="Mercedes Interior" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/1f/ac/86/1fac86e7e6b4332a3f52225b2d629cb7.jpg" alt="Mercedes Side" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details -->
                     <div class="vehicle-details">
                         <h2>2021 Mercedes-Benz C200 AMG Line</h2>
+                        <!-- AMG Line is Mercedes' sporty trim package -->
+                        
                         <p class="price">R 720,000</p>
+                        
+                        <!-- Specifications Grid -->
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
@@ -148,6 +261,7 @@
                             <div class="spec-item">
                                 <span class="spec-label">Transmission</span>
                                 <span class="spec-value">9G-Tronic</span>
+                                <!-- Mercedes' 9-speed automatic transmission -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
@@ -156,42 +270,59 @@
                             <div class="spec-item">
                                 <span class="spec-label">Color</span>
                                 <span class="spec-value">Obsidian Black</span>
+                                <!-- Mercedes official color name -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">1.5L Turbo</span>
                             </div>
                         </div>
+                        
+                        <!-- Mercedes-specific Features -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
                                 <li>✓ AMG Line Package</li>
                                 <li>✓ MBUX System</li>
+                                <!-- Mercedes-Benz User Experience infotainment system -->
                                 <li>✓ Premium Sound</li>
                                 <li>✓ Panoramic Roof</li>
                                 <li>✓ 360° Camera</li>
                                 <li>✓ Ambient Lighting</li>
                             </ul>
                         </div>
+                        
                         <a href="contact.html" class="btn">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Vehicle 3 - Volkswagen Golf -->
+                <!-- ========== VEHICLE 3 - Volkswagen Golf ========== -->
+                <!-- Hatchback category vehicle - sporty GTI variant -->
                 <div class="vehicle-listing" data-brand="volkswagen" data-price="480000" data-type="hatchback">
+                    
+                    <!-- Vehicle Image Gallery -->
                     <div class="vehicle-gallery">
                         <div class="main-image">
                             <img src="https://i.pinimg.com/736x/f3/f0/df/f3f0df4aabb705224a2708c3c5e95d14.jpg" alt="Volkswagen Golf" id="vw-main">
+                            <!-- id="vw-main" for JavaScript image switching -->
                         </div>
+                        
+                        <!-- Thumbnail Gallery -->
                         <div class="thumbnail-images">
                             <img src="https://i.pinimg.com/474x/40/4e/b3/404eb32ac28fc3ff263e6314a5765446.jpg" alt="Golf Exterior" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/7a/55/23/7a55237d149f4f1b0b17ebbde37d982c.jpg" alt="Golf Interior" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/736x/13/6c/35/136c35f1e30a1105290ad184945dd30f.jpg" alt="Golf Rear" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details -->
                     <div class="vehicle-details">
                         <h2>2023 Volkswagen Golf 8 GTI</h2>
+                        <!-- Golf 8 is the 8th generation; GTI is the performance variant -->
+                        
                         <p class="price">R 480,000</p>
+                        
+                        <!-- Specifications Grid -->
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
@@ -200,10 +331,12 @@
                             <div class="spec-item">
                                 <span class="spec-label">Mileage</span>
                                 <span class="spec-value">10,000 km</span>
+                                <!-- Low mileage indicates nearly new vehicle -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Transmission</span>
                                 <span class="spec-value">7-Speed DSG</span>
+                                <!-- DSG = Direct Shift Gearbox (VW's dual-clutch automatic) -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
@@ -212,42 +345,62 @@
                             <div class="spec-item">
                                 <span class="spec-label">Color</span>
                                 <span class="spec-value">Kings Red</span>
+                                <!-- VW official color name -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">2.0L TSI</span>
+                                <!-- TSI = Turbocharged Stratified Injection -->
                             </div>
                         </div>
+                        
+                        <!-- GTI-specific Features -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
                                 <li>✓ Digital Cockpit Pro</li>
+                                <!-- VW's digital instrument cluster -->
                                 <li>✓ Harman Kardon Sound</li>
+                                <!-- Premium audio system brand -->
                                 <li>✓ LED Matrix Lights</li>
                                 <li>✓ Sports Seats</li>
                                 <li>✓ Adaptive Cruise</li>
                                 <li>✓ Wireless CarPlay</li>
+                                <!-- Apple CarPlay without cable connection -->
                             </ul>
                         </div>
+                        
                         <a href="contact.html" class="btn">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Vehicle 4 - Toyota Fortuner -->
+                <!-- ========== VEHICLE 4 - Toyota Fortuner ========== -->
+                <!-- SUV category vehicle - popular in South African market -->
                 <div class="vehicle-listing" data-brand="toyota" data-price="550000" data-type="suv">
+                    
+                    <!-- Vehicle Image Gallery -->
                     <div class="vehicle-gallery">
                         <div class="main-image">
                             <img src="https://i.pinimg.com/736x/90/f2/7c/90f27c871f54738d0538568e5b05be7c.jpg" alt="Toyota Fortuner" id="toyota-main">
+                            <!-- id="toyota-main" for JavaScript image switching -->
                         </div>
+                        
+                        <!-- Thumbnail Gallery -->
                         <div class="thumbnail-images">
                             <img src="https://i.pinimg.com/736x/e8/f5/4a/e8f54a0370f40eb8d65094adc5778167.jpg" alt="Fortuner Front" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/736x/f2/09/92/f20992b741e5a167c15f2104076968ab.jpg" alt="Fortuner Interior" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/b5/90/01/b59001c4dcb9fb435b7b18ee386cc219.jpg" alt="Fortuner Side" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details -->
                     <div class="vehicle-details">
                         <h2>2022 Toyota Fortuner 2.8 GD-6 4x4</h2>
+                        <!-- GD-6 is Toyota's diesel engine; 4x4 indicates four-wheel drive -->
+                        
                         <p class="price">R 550,000</p>
+                        
+                        <!-- Specifications Grid -->
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
@@ -264,6 +417,7 @@
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
                                 <span class="spec-value">Diesel</span>
+                                <!-- Diesel engine - common for SUVs in SA -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Color</span>
@@ -274,36 +428,55 @@
                                 <span class="spec-value">2.8L GD-6</span>
                             </div>
                         </div>
+                        
+                        <!-- SUV-specific Features -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
                                 <li>✓ 4x4 System</li>
+                                <!-- Four-wheel drive capability -->
                                 <li>✓ 7 Seater</li>
+                                <!-- Third row seating capacity -->
                                 <li>✓ Toyota Connect</li>
+                                <!-- Toyota's connected car services -->
                                 <li>✓ Hill Assist</li>
+                                <!-- Hill-start assist control -->
                                 <li>✓ Cruise Control</li>
                                 <li>✓ Roof Rails</li>
                             </ul>
                         </div>
+                        
                         <a href="contact.html" class="btn">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Vehicle 5 - Ford Ranger -->
+                <!-- ========== VEHICLE 5 - Ford Ranger ========== -->
+                <!-- Bakkie (pickup truck) category - very popular in South Africa -->
                 <div class="vehicle-listing" data-brand="ford" data-price="420000" data-type="bakkie">
+                    
+                    <!-- Vehicle Image Gallery -->
                     <div class="vehicle-gallery">
                         <div class="main-image">
                             <img src="https://i.pinimg.com/1200x/79/95/9b/79959b1fa67717b964a2eecc7bf7f118.jpg" alt="Ford Ranger" id="ford-main">
+                            <!-- id="ford-main" for JavaScript image switching -->
                         </div>
+                        
+                        <!-- Thumbnail Gallery -->
                         <div class="thumbnail-images">
                             <img src="https://i.pinimg.com/1200x/4f/b4/60/4fb46053751489b7ba2bab60c9cb4675.jpg" alt="Ranger Front" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/736x/93/f2/e0/93f2e085a8f4274814d72996f3cd8f7d.jpg" alt="Ranger Interior" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/fc/7a/d3/fc7ad392afce4a6f371fb189e18b06ee.jpg" alt="Ranger Rear" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details -->
                     <div class="vehicle-details">
                         <h2>2021 Ford Ranger Wildtrak 2.0 Bi-Turbo</h2>
+                        <!-- Wildtrak is Ford's premium off-road trim; Bi-Turbo has twin turbochargers -->
+                        
                         <p class="price">R 420,000</p>
+                        
+                        <!-- Specifications Grid -->
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
@@ -316,6 +489,7 @@
                             <div class="spec-item">
                                 <span class="spec-label">Transmission</span>
                                 <span class="spec-value">10-Speed Auto</span>
+                                <!-- Ford's 10-speed automatic transmission -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
@@ -330,36 +504,56 @@
                                 <span class="spec-value">2.0L Bi-Turbo</span>
                             </div>
                         </div>
+                        
+                        <!-- Bakkie/Wildtrak-specific Features -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
                                 <li>✓ Wildtrak Package</li>
+                                <!-- Premium off-road styling package -->
                                 <li>✓ SYNC 3 System</li>
+                                <!-- Ford's infotainment system -->
                                 <li>✓ Roller Shutter</li>
+                                <!-- Load bin cover -->
                                 <li>✓ Sports Bar</li>
+                                <!-- Roll bar behind cabin -->
                                 <li>✓ Lane Keep Assist</li>
                                 <li>✓ Adaptive Cruise</li>
                             </ul>
                         </div>
+                        
                         <a href="contact.html" class="btn">Enquire Now</a>
                     </div>
                 </div>
 
-                <!-- Vehicle 6 - Toyota Corolla -->
+                <!-- ========== VEHICLE 6 - Toyota Corolla ========== -->
+                <!-- Budget-friendly sedan option -->
                 <div class="vehicle-listing" data-brand="toyota" data-price="280000" data-type="sedan">
+                    
+                    <!-- Vehicle Image Gallery -->
                     <div class="vehicle-gallery">
                         <div class="main-image">
                             <img src="https://i.pinimg.com/736x/74/61/4d/74614d884940788ce8d1a6ef46fcb8a9.jpg" alt="Toyota Corolla" id="corolla-main">
+                            <!-- id="corolla-main" for JavaScript image switching -->
                         </div>
+                        
+                        <!-- Thumbnail Gallery -->
                         <div class="thumbnail-images">
                             <img src="https://i.pinimg.com/736x/5c/7b/7f/5c7b7ffb8774709bc9d64077c21fc129.jpg" alt="Corolla Front" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/736x/91/be/da/91bedae358036da7d56398ff7b43c994.jpg" alt="Corolla Side" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
                             <img src="https://i.pinimg.com/1200x/04/ce/2b/04ce2b06f828f0bb9a39660be8042770.jpg" alt="Corolla Interior" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
                         </div>
                     </div>
+                    
+                    <!-- Vehicle Details -->
                     <div class="vehicle-details">
                         <h2>2020 Toyota Corolla Quest 1.8</h2>
+                        <!-- Quest is Toyota SA's budget-friendly Corolla variant -->
+                        
                         <p class="price">R 280,000</p>
+                        <!-- Most affordable option in the listings -->
+                        
+                        <!-- Specifications Grid -->
                         <div class="specs-grid">
                             <div class="spec-item">
                                 <span class="spec-label">Year</span>
@@ -372,6 +566,7 @@
                             <div class="spec-item">
                                 <span class="spec-label">Transmission</span>
                                 <span class="spec-value">Manual</span>
+                                <!-- Manual transmission - only manual option in listings -->
                             </div>
                             <div class="spec-item">
                                 <span class="spec-label">Fuel Type</span>
@@ -384,8 +579,11 @@
                             <div class="spec-item">
                                 <span class="spec-label">Engine</span>
                                 <span class="spec-value">1.8L VVT-i</span>
+                                <!-- VVT-i = Variable Valve Timing with intelligence -->
                             </div>
                         </div>
+                        
+                        <!-- Basic/Essential Features -->
                         <div class="features">
                             <h4>Features:</h4>
                             <ul>
@@ -395,45 +593,74 @@
                                 <li>✓ Electric Windows</li>
                                 <li>✓ Radio/CD Player</li>
                                 <li>✓ ABS Brakes</li>
+                                <!-- Anti-lock Braking System -->
                             </ul>
                         </div>
+                        
                         <a href="contact.html" class="btn">Enquire Now</a>
                     </div>
                 </div>
 
             </div>
+            <!-- End of vehicles-list container -->
         </div>
+        <!-- End of container -->
     </section>
+    <!-- End of vehicles-section -->
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Page footer with company info, links, and contact details -->
     <footer class="footer">
         <div class="container">
+            
+            <!-- Footer Content Grid -->
             <div class="footer-content">
+                
+                <!-- Footer Section 1: Company Info -->
                 <div class="footer-section">
                     <h3>Auto<span>4Sale</span></h3>
+                    <!-- Company logo/name matching header -->
                     <p>Your trusted partner in finding the perfect vehicle since 2010.</p>
+                    <!-- Company tagline/description -->
                 </div>
+                
+                <!-- Footer Section 2: Quick Navigation Links -->
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="vehicles.html">Vehicles</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
+                        <!-- Duplicate navigation for easy access in footer -->
                     </ul>
                 </div>
+                
+                <!-- Footer Section 3: Contact Information -->
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p>📍 123 Main Road, Johannesburg</p>
+                    <!-- Physical address with location emoji -->
                     <p>📞 011 123 4567</p>
+                    <!-- Phone number with phone emoji (011 is Johannesburg area code) -->
                     <p>✉️ info@auto4sale.co.za</p>
+                    <!-- Email address with envelope emoji (.co.za is South African domain) -->
                 </div>
             </div>
+            
+            <!-- Footer Bottom: Copyright Notice -->
             <div class="footer-bottom">
                 <p>&copy; 2024 Auto4Sale. All rights reserved.</p>
+                <!-- &copy; is HTML entity for copyright symbol © -->
             </div>
+            
         </div>
     </footer>
 
+    <!-- ==================== JAVASCRIPT FILE LINK ==================== -->
+    <!-- External JavaScript file for interactivity -->
+    <!-- Placed at bottom of body for faster page load (HTML loads first) -->
     <script src="script.js"></script>
+    <!-- Contains functions like toggleMenu(), changeImage(), and filterVehicles() -->
+    
 </body>
 </html>

@@ -1,97 +1,254 @@
 <!DOCTYPE html>
+<!-- Document type declaration - specifies this is an HTML5 document -->
+<!-- Must be the very first line in the document before any HTML content -->
+
 <html lang="en">
+<!-- Root HTML element - all page content is contained within -->
+<!-- lang="en" declares the document language as English -->
+<!-- Helps screen readers pronounce content correctly -->
+<!-- Assists search engines in serving the right language version -->
+
 <head>
+    <!-- Head section - contains metadata and resource links -->
+    <!-- This content is not visible on the page but is essential for browser/SEO -->
+    
     <meta charset="UTF-8">
+    <!-- Character encoding set to UTF-8 (Universal Character Set Transformation Format) -->
+    <!-- Supports all international characters, symbols, and emojis -->
+    <!-- Essential for proper display of special characters -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport configuration for responsive design -->
+    <!-- width=device-width: page width matches device screen width -->
+    <!-- initial-scale=1.0: no zoom applied on initial page load -->
+    <!-- Critical for mobile-friendly websites -->
+    
     <title>Auto4Sale - Contact Us</title>
+    <!-- Page title displayed in browser tab -->
+    <!-- Used by search engines as the title in search results -->
+    <!-- Format follows consistent pattern: Brand - Page Name -->
+    
     <link rel="stylesheet" href="styles.css">
+    <!-- Link to external CSS stylesheet -->
+    <!-- rel="stylesheet" defines the relationship type -->
+    <!-- href specifies the file path to the CSS file -->
+    <!-- External CSS enables code reuse across pages and browser caching -->
 </head>
+
 <body>
-    <!-- Navigation -->
+    <!-- Body contains all visible page content -->
+    <!-- Everything the user sees and interacts with goes here -->
+
+    <!-- ==================== NAVIGATION SECTION ==================== -->
+    <!-- Main navigation bar - consistent across all pages for user orientation -->
+    <!-- Semantic <nav> element improves accessibility and SEO -->
     <nav class="navbar">
+        
+        <!-- Logo/Brand Container -->
         <div class="logo">
             <h1>Auto<span>4Sale</span></h1>
+            <!-- Company branding with split styling -->
+            <!-- <span> wraps "4Sale" for different CSS styling (typically different color) -->
+            <!-- h1 appropriate for brand name as it represents the site identity -->
         </div>
+        
+        <!-- Desktop Navigation Menu -->
+        <!-- Unordered list is semantically correct for navigation links -->
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <!-- Link to homepage -->
+            
             <li><a href="vehicles.html">Vehicles</a></li>
+            <!-- Link to vehicles listing page -->
+            
             <li><a href="contact.html" class="active">Contact Us</a></li>
+            <!-- Link to current page - Contact Us -->
+            <!-- "active" class indicates this is the current page -->
+            <!-- CSS styles this differently to show user's current location -->
         </ul>
+        
+        <!-- Mobile Hamburger Menu Button -->
+        <!-- Hidden on desktop, visible on mobile via CSS media queries -->
         <div class="hamburger" onclick="toggleMenu()">
+            <!-- onclick triggers JavaScript function to show/hide mobile menu -->
             <span></span>
             <span></span>
             <span></span>
+            <!-- Three spans create the hamburger icon (≡) -->
+            <!-- CSS styles these as horizontal lines -->
+            <!-- JavaScript may animate these into an X when menu is open -->
         </div>
     </nav>
 
-    <!-- Page Header -->
+    <!-- ==================== PAGE HEADER SECTION ==================== -->
+    <!-- Page header/banner - introduces the page content -->
+    <!-- Typically has a background image or color defined in CSS -->
     <div class="page-header">
         <h1>Contact Us</h1>
+        <!-- Main page heading - clearly identifies the page purpose -->
+        
         <p>Get in touch with our team</p>
+        <!-- Subtitle providing additional context -->
+        <!-- Welcoming message to encourage user engagement -->
     </div>
 
-    <!-- Contact Section -->
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <!-- Main contact section containing info and form -->
+    <!-- Semantic <section> element groups related content -->
     <section class="contact-section">
         <div class="container">
+            <!-- Container provides consistent max-width and centering -->
+            
+            <!-- Contact Wrapper - creates two-column layout -->
             <div class="contact-wrapper">
-                <!-- Contact Information -->
+                
+                <!-- ========== LEFT COLUMN: CONTACT INFORMATION ========== -->
+                <!-- Displays company contact details -->
                 <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Have questions about a vehicle or want to schedule a test drive? We'd love to hear from you!</p>
                     
+                    <h2>Get In Touch</h2>
+                    <!-- Section heading -->
+                    
+                    <p>Have questions about a vehicle or want to schedule a test drive? We'd love to hear from you!</p>
+                    <!-- Welcoming message encouraging contact -->
+                    <!-- Mentions specific reasons to contact (vehicle questions, test drives) -->
+                    
+                    <!-- ===== Location Information Card ===== -->
                     <div class="info-item">
+                        <!-- Individual contact info card with icon and text -->
+                        
                         <div class="info-icon">📍</div>
+                        <!-- Location pin emoji as visual icon -->
+                        <!-- Could also use icon fonts (Font Awesome) or SVGs -->
+                        
                         <div class="info-text">
                             <h4>Our Location</h4>
+                            <!-- Card heading -->
+                            
                             <p>123 Main Road<br>Sandton, Johannesburg<br>South Africa, 2196</p>
+                            <!-- Full physical address -->
+                            <!-- <br> tags create line breaks for address formatting -->
+                            <!-- Sandton is an upscale suburb of Johannesburg -->
+                            <!-- 2196 is the postal code -->
                         </div>
                     </div>
 
+                    <!-- ===== Phone Numbers Card ===== -->
                     <div class="info-item">
                         <div class="info-icon">📞</div>
+                        <!-- Telephone emoji icon -->
+                        
                         <div class="info-text">
                             <h4>Phone Numbers</h4>
+                            
                             <p>Sales: 011 123 4567<br>Service: 011 123 4568<br>WhatsApp: 082 123 4567</p>
+                            <!-- Multiple contact numbers for different departments -->
+                            <!-- 011 is Johannesburg landline area code -->
+                            <!-- 082 is a South African mobile number prefix (Vodacom) -->
+                            <!-- WhatsApp option caters to modern communication preferences -->
                         </div>
                     </div>
 
+                    <!-- ===== Email Addresses Card ===== -->
                     <div class="info-item">
                         <div class="info-icon">✉️</div>
+                        <!-- Envelope emoji icon -->
+                        
                         <div class="info-text">
                             <h4>Email Addresses</h4>
+                            
                             <p>Sales: sales@auto4sale.co.za<br>Info: info@auto4sale.co.za<br>Support: support@auto4sale.co.za</p>
+                            <!-- Department-specific email addresses -->
+                            <!-- .co.za is South Africa's commercial domain extension -->
+                            <!-- Separate emails help route inquiries to correct teams -->
                         </div>
                     </div>
 
+                    <!-- ===== Business Hours Card ===== -->
                     <div class="info-item">
                         <div class="info-icon">🕐</div>
+                        <!-- Clock emoji icon -->
+                        
                         <div class="info-text">
                             <h4>Business Hours</h4>
+                            
                             <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                            <!-- Operating hours for each day -->
+                            <!-- Typical South African business hours -->
+                            <!-- Saturday has shorter hours -->
+                            <!-- Closed on Sunday (common for car dealerships) -->
                         </div>
                     </div>
 
+                    <!-- ===== Social Media Links Section ===== -->
                     <div class="social-links">
                         <h4>Follow Us</h4>
+                        <!-- Section heading for social media -->
+                        
                         <div class="social-icons">
+                            <!-- Container for social media link buttons -->
+                            
                             <a href="#" class="social-icon">Facebook</a>
+                            <!-- Facebook link - # is placeholder href -->
+                            <!-- In production, this would link to actual Facebook page -->
+                            
                             <a href="#" class="social-icon">Instagram</a>
+                            <!-- Instagram link - visual platform good for car photos -->
+                            
                             <a href="#" class="social-icon">Twitter</a>
+                            <!-- Twitter/X link for updates and engagement -->
+                            
                             <a href="#" class="social-icon">YouTube</a>
+                            <!-- YouTube link - good for vehicle walkaround videos -->
+                            
+                            <!-- Note: href="#" are placeholder links -->
+                            <!-- Should be replaced with actual social media URLs -->
+                            <!-- Could also use icon fonts instead of text -->
                         </div>
                     </div>
                 </div>
+                <!-- End of contact-info column -->
 
-                <!-- Contact Form -->
+                <!-- ========== RIGHT COLUMN: CONTACT FORM ========== -->
+                <!-- Form wrapper containing the contact form -->
                 <div class="contact-form-wrapper">
+                    
                     <h2>Send Us a Message</h2>
+                    <!-- Form section heading -->
+                    
+                    <!-- Contact Form -->
+                    <!-- id="contactForm" allows JavaScript to reference this form -->
+                    <!-- onsubmit="handleSubmit(event)" calls JS function when form is submitted -->
+                    <!-- The event parameter allows preventing default form submission -->
                     <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
+                        
+                        <!-- ===== Row 1: Name Fields (Two Columns) ===== -->
                         <div class="form-row">
+                            <!-- form-row creates a horizontal row for side-by-side fields -->
+                            
+                            <!-- First Name Field -->
                             <div class="form-group">
+                                <!-- form-group wraps label, input, and error message -->
+                                
                                 <label for="firstName">First Name *</label>
+                                <!-- Label associated with input via "for" attribute -->
+                                <!-- Asterisk (*) indicates required field -->
+                                <!-- Clicking label focuses the associated input -->
+                                
                                 <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                                <!-- type="text" for standard text input -->
+                                <!-- id="firstName" matches label's "for" attribute -->
+                                <!-- name="firstName" used when form data is submitted -->
+                                <!-- required attribute enables HTML5 validation -->
+                                <!-- placeholder shows hint text when field is empty -->
+                                
                                 <span class="error-message" id="firstNameError"></span>
+                                <!-- Container for JavaScript validation error messages -->
+                                <!-- Empty by default, filled by JavaScript if validation fails -->
+                                <!-- id allows JavaScript to target this specific error span -->
                             </div>
+                            
+                            <!-- Last Name Field -->
                             <div class="form-group">
                                 <label for="lastName">Last Name *</label>
                                 <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
@@ -99,83 +256,189 @@
                             </div>
                         </div>
 
+                        <!-- ===== Row 2: Email and Phone Fields (Two Columns) ===== -->
                         <div class="form-row">
+                            
+                            <!-- Email Address Field -->
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
+                                
                                 <input type="email" id="email" name="email" required placeholder="Enter your email">
+                                <!-- type="email" provides email-specific validation -->
+                                <!-- Browser checks for @ symbol and valid format -->
+                                <!-- Mobile devices show email-optimized keyboard -->
+                                
                                 <span class="error-message" id="emailError"></span>
                             </div>
+                            
+                            <!-- Phone Number Field -->
                             <div class="form-group">
                                 <label for="phone">Phone Number *</label>
+                                
                                 <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                                <!-- type="tel" for telephone numbers -->
+                                <!-- Mobile devices show numeric keypad -->
+                                <!-- Does not validate format (phone formats vary globally) -->
+                                
                                 <span class="error-message" id="phoneError"></span>
                             </div>
                         </div>
 
+                        <!-- ===== Subject Dropdown Field ===== -->
                         <div class="form-group">
                             <label for="subject">Subject *</label>
+                            
                             <select id="subject" name="subject" required>
+                                <!-- <select> creates dropdown/combobox -->
+                                <!-- required ensures user must select an option -->
+                                
                                 <option value="">Select a subject</option>
+                                <!-- Default placeholder option -->
+                                <!-- Empty value means "required" validation will fail if selected -->
+                                
                                 <option value="general">General Enquiry</option>
+                                <!-- General questions not fitting other categories -->
+                                
                                 <option value="vehicle">Vehicle Enquiry</option>
+                                <!-- Questions about specific vehicles -->
+                                
                                 <option value="testdrive">Book a Test Drive</option>
+                                <!-- Request to test drive a vehicle -->
+                                
                                 <option value="finance">Finance Options</option>
+                                <!-- Questions about payment plans, loans -->
+                                
                                 <option value="tradein">Trade-In Valuation</option>
+                                <!-- Request value assessment for existing vehicle -->
+                                
                                 <option value="other">Other</option>
+                                <!-- Catch-all for anything not listed -->
                             </select>
+                            
                             <span class="error-message" id="subjectError"></span>
                         </div>
 
+                        <!-- ===== Vehicle of Interest Dropdown Field ===== -->
                         <div class="form-group">
                             <label for="vehicle">Vehicle of Interest</label>
+                            <!-- Note: No asterisk - this field is optional -->
+                            
                             <select id="vehicle" name="vehicle">
+                                <!-- No "required" attribute - field is optional -->
+                                
                                 <option value="">Select a vehicle (optional)</option>
+                                <!-- Clearly marked as optional -->
+                                
                                 <option value="bmw-3series">2022 BMW 3 Series 320i M Sport</option>
                                 <option value="mercedes-cclass">2021 Mercedes-Benz C200 AMG Line</option>
                                 <option value="vw-golf">2023 Volkswagen Golf 8 GTI</option>
                                 <option value="toyota-fortuner">2022 Toyota Fortuner 2.8 GD-6</option>
                                 <option value="ford-ranger">2021 Ford Ranger Wildtrak</option>
                                 <option value="toyota-corolla">2020 Toyota Corolla Quest</option>
+                                <!-- List of available vehicles matching the vehicles page -->
+                                <!-- value attributes use kebab-case identifiers -->
+                                <!-- Display text shows full vehicle details -->
                             </select>
+                            <!-- No error message span - field is optional -->
                         </div>
 
+                        <!-- ===== Message Textarea Field ===== -->
                         <div class="form-group">
                             <label for="message">Message *</label>
+                            
                             <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                            <!-- <textarea> for multi-line text input -->
+                            <!-- rows="5" sets initial visible height (5 lines) -->
+                            <!-- required ensures message cannot be empty -->
+                            <!-- placeholder provides guidance on expected content -->
+                            <!-- Unlike input, textarea has no type attribute -->
+                            <!-- Content goes between opening and closing tags (empty here) -->
+                            
                             <span class="error-message" id="messageError"></span>
                         </div>
 
+                        <!-- ===== Newsletter Subscription Checkbox ===== -->
                         <div class="form-group checkbox-group">
+                            <!-- checkbox-group class for different styling than regular inputs -->
+                            
                             <input type="checkbox" id="newsletter" name="newsletter">
+                            <!-- type="checkbox" creates a toggleable checkbox -->
+                            <!-- No "required" attribute - subscription is optional -->
+                            <!-- When checked, form submits newsletter=on -->
+                            
                             <label for="newsletter">Subscribe to our newsletter for the latest deals and updates</label>
+                            <!-- Label explains what checking the box means -->
+                            <!-- Clicking the label text also toggles the checkbox -->
                         </div>
 
+                        <!-- ===== Terms and Conditions Checkbox ===== -->
                         <div class="form-group checkbox-group">
                             <input type="checkbox" id="terms" name="terms" required>
+                            <!-- required attribute - form cannot submit without agreement -->
+                            <!-- Legal requirement for data collection/processing -->
+                            
                             <label for="terms">I agree to the Terms & Conditions and Privacy Policy *</label>
+                            <!-- User must agree to terms to submit form -->
+                            <!-- Asterisk indicates this is required -->
+                            <!-- In production, "Terms & Conditions" and "Privacy Policy" -->
+                            <!-- would typically be links to those documents -->
+                            
                             <span class="error-message" id="termsError"></span>
+                            <!-- Error message if user tries to submit without checking -->
                         </div>
 
+                        <!-- ===== Submit Button ===== -->
                         <button type="submit" class="btn btn-submit">Send Message</button>
+                        <!-- type="submit" triggers form submission -->
+                        <!-- Clicking this button fires the onsubmit event -->
+                        <!-- btn and btn-submit classes for button styling -->
+                        <!-- Button text clearly indicates the action -->
                     </form>
 
-                    <!-- Success Message -->
+                    <!-- ===== Success Message (Hidden by Default) ===== -->
+                    <!-- Displayed after successful form submission -->
                     <div id="successMessage" class="success-message" style="display: none;">
+                        <!-- style="display: none;" hides this initially -->
+                        <!-- JavaScript will change to display: block after successful submit -->
+                        <!-- id="successMessage" allows JavaScript to target this element -->
+                        
                         <div class="success-icon">✓</div>
+                        <!-- Checkmark icon indicating success -->
+                        
                         <h3>Thank You!</h3>
+                        <!-- Success heading -->
+                        
                         <p>Your message has been sent successfully. One of our team members will get back to you within 24 hours.</p>
+                        <!-- Confirmation message with response time expectation -->
+                        <!-- Sets user expectations for when they'll hear back -->
+                        
                         <button onclick="resetForm()" class="btn">Send Another Message</button>
+                        <!-- Button to reset form and send another message -->
+                        <!-- onclick calls resetForm() function in JavaScript -->
+                        <!-- This hides success message and shows empty form again -->
                     </div>
                 </div>
+                <!-- End of contact-form-wrapper -->
+                
             </div>
+            <!-- End of contact-wrapper -->
         </div>
+        <!-- End of container -->
     </section>
+    <!-- End of contact-section -->
 
-    <!-- Map Section -->
+    <!-- ==================== MAP SECTION ==================== -->
+    <!-- Embedded Google Map showing business location -->
     <section class="map-section">
         <div class="container">
+            
             <h2>Find Us</h2>
+            <!-- Section heading -->
+            
             <div class="map-container">
+                <!-- Container for the map iframe -->
+                <!-- CSS may add border-radius, shadow, or responsive sizing -->
+                
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.9095809620754!2d28.0473!3d-26.1076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA2JzI3LjQiUyAyOMKwMDInNTAuMyJF!5e0!3m2!1sen!2sza!4v1234567890"
                     width="100%" 
@@ -185,39 +448,103 @@
                     loading="lazy"
                     title="Auto4Sale Location">
                 </iframe>
+                <!-- Google Maps embed iframe -->
+                
+                <!-- src: Google Maps embed URL with encoded location data -->
+                <!-- The coordinates point to Johannesburg area (-26.1076, 28.0473) -->
+                <!-- Parameters in URL control zoom, view type, and location marker -->
+                
+                <!-- width="100%": makes map responsive to container width -->
+                <!-- height="400": fixed height of 400 pixels -->
+                
+                <!-- style="border:0;": removes default iframe border -->
+                
+                <!-- allowfullscreen="": allows user to view map in fullscreen mode -->
+                
+                <!-- loading="lazy": defers loading until map is near viewport -->
+                <!-- Improves page load performance (map loads when user scrolls to it) -->
+                
+                <!-- title="Auto4Sale Location": accessibility attribute -->
+                <!-- Describes iframe content for screen readers -->
+                <!-- Required for WCAG accessibility compliance -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <!-- Page footer - consistent across all pages -->
+    <!-- Contains company info, navigation links, and contact details -->
     <footer class="footer">
         <div class="container">
+            
+            <!-- Footer Content Grid -->
             <div class="footer-content">
+                
+                <!-- Footer Column 1: Company Branding -->
                 <div class="footer-section">
                     <h3>Auto<span>4Sale</span></h3>
+                    <!-- Company logo/name matching header -->
+                    <!-- Maintains brand consistency across the page -->
+                    
                     <p>Your trusted partner in finding the perfect vehicle since 2010.</p>
+                    <!-- Company tagline and establishment year -->
                 </div>
+                
+                <!-- Footer Column 2: Navigation Links -->
                 <div class="footer-section">
                     <h4>Quick Links</h4>
+                    
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="vehicles.html">Vehicles</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
+                    <!-- Duplicate navigation in footer -->
+                    <!-- Provides easy access to main pages from page bottom -->
+                    <!-- Helps users who scrolled down the entire page -->
                 </div>
+                
+                <!-- Footer Column 3: Contact Information -->
                 <div class="footer-section">
                     <h4>Contact Info</h4>
+                    
                     <p>📍 123 Main Road, Johannesburg</p>
+                    <!-- Physical address with location emoji -->
+                    
                     <p>📞 011 123 4567</p>
+                    <!-- Phone with telephone emoji -->
+                    <!-- 011 is Johannesburg area code -->
+                    
                     <p>✉️ info@auto4sale.co.za</p>
+                    <!-- Email with envelope emoji -->
+                    <!-- .co.za is South African domain -->
                 </div>
             </div>
+            
+            <!-- Footer Bottom Bar -->
             <div class="footer-bottom">
                 <p>&copy; 2024 Auto4Sale. All rights reserved.</p>
+                <!-- Copyright notice -->
+                <!-- &copy; = © (copyright symbol HTML entity) -->
+                <!-- Year should be current or dynamically generated -->
             </div>
+            
         </div>
     </footer>
 
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <!-- External JavaScript file -->
+    <!-- Placed at bottom of body for optimal page loading -->
     <script src="script.js"></script>
+    <!-- This file contains: -->
+    <!-- - toggleMenu(): Mobile navigation toggle function -->
+    <!-- - handleSubmit(event): Form submission handler -->
+    <!-- - resetForm(): Resets form after successful submission -->
+    <!-- - Form validation functions -->
+    <!-- - Any other interactive functionality -->
+    
 </body>
+<!-- End of body section -->
+
 </html>
+<!-- End of HTML document -->

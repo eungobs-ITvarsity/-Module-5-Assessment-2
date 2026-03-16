@@ -314,7 +314,7 @@ function validateSingleField(field) {
     const id = field.id;
     const value = field.value.trim();
     
-    // Clear previous error
+    
     field.classList.remove('error');
     field.classList.remove('success');
     const errorElement = document.getElementById(id + 'Error');
