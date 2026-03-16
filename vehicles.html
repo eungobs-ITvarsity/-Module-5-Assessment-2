@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto4Sale - Vehicles</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Auto<span>4Sale</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="vehicles.html" class="active">Vehicles</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>Our Vehicles</h1>
+        <p>Browse our selection of quality vehicles</p>
+    </div>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filters">
+                <select id="brandFilter" onchange="filterVehicles()">
+                    <option value="all">All Brands</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes-Benz</option>
+                    <option value="volkswagen">Volkswagen</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="ford">Ford</option>
+                </select>
+                <select id="priceFilter" onchange="filterVehicles()">
+                    <option value="all">All Prices</option>
+                    <option value="0-300000">Under R 300,000</option>
+                    <option value="300000-500000">R 300,000 - R 500,000</option>
+                    <option value="500000-800000">R 500,000 - R 800,000</option>
+                    <option value="800000+">Over R 800,000</option>
+                </select>
+                <select id="typeFilter" onchange="filterVehicles()">
+                    <option value="all">All Types</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="hatchback">Hatchback</option>
+                    <option value="bakkie">Bakkie</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Listing -->
+    <section class="vehicles-section">
+        <div class="container">
+            <div class="vehicles-list">
+                
+                <!-- Vehicle 1 - BMW 3 Series -->
+                <div class="vehicle-listing" data-brand="bmw" data-price="650000" data-type="sedan">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" alt="BMW 3 Series" id="bmw-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=150" alt="BMW 3 Series" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/736x/b5/b9/01/b5b901fe4b842b35ef50bc48a45cc16c.jpg" alt="BMW Interior" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/0c/9d/c7/0c9dc764b365ac4b026a3bda2abb3737.jpg" alt="BMW Wheels" onclick="changeImage('bmw-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2022 BMW 3 Series 320i M Sport</h2>
+                        <p class="price">R 650,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2022</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">25,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Alpine White</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.0L Turbo</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ M Sport Package</li>
+                                <li>✓ Navigation System</li>
+                                <li>✓ Leather Seats</li>
+                                <li>✓ Sunroof</li>
+                                <li>✓ Reverse Camera</li>
+                                <li>✓ Bluetooth</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 - Mercedes-Benz C-Class -->
+                <div class="vehicle-listing" data-brand="mercedes" data-price="720000" data-type="sedan">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://i.pinimg.com/1200x/67/78/04/677804e82612122490898ecfc3dc38b9.jpg" alt="Mercedes-Benz C-Class" id="merc-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://i.pinimg.com/1200x/1a/80/69/1a8069726596688dd87619e0bfcc227d.jpg" alt="Mercedes Exterior" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/85/de/95/85de951ed84d7520d2a985e28bff8864.jpg" alt="Mercedes Interior" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/1f/ac/86/1fac86e7e6b4332a3f52225b2d629cb7.jpg" alt="Mercedes Side" onclick="changeImage('merc-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2021 Mercedes-Benz C200 AMG Line</h2>
+                        <p class="price">R 720,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2021</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">30,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">9G-Tronic</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Obsidian Black</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">1.5L Turbo</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ AMG Line Package</li>
+                                <li>✓ MBUX System</li>
+                                <li>✓ Premium Sound</li>
+                                <li>✓ Panoramic Roof</li>
+                                <li>✓ 360° Camera</li>
+                                <li>✓ Ambient Lighting</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 - Volkswagen Golf -->
+                <div class="vehicle-listing" data-brand="volkswagen" data-price="480000" data-type="hatchback">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://i.pinimg.com/736x/f3/f0/df/f3f0df4aabb705224a2708c3c5e95d14.jpg" alt="Volkswagen Golf" id="vw-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://i.pinimg.com/474x/40/4e/b3/404eb32ac28fc3ff263e6314a5765446.jpg" alt="Golf Exterior" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/7a/55/23/7a55237d149f4f1b0b17ebbde37d982c.jpg" alt="Golf Interior" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/736x/13/6c/35/136c35f1e30a1105290ad184945dd30f.jpg" alt="Golf Rear" onclick="changeImage('vw-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2023 Volkswagen Golf 8 GTI</h2>
+                        <p class="price">R 480,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2023</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">10,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">7-Speed DSG</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Kings Red</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.0L TSI</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ Digital Cockpit Pro</li>
+                                <li>✓ Harman Kardon Sound</li>
+                                <li>✓ LED Matrix Lights</li>
+                                <li>✓ Sports Seats</li>
+                                <li>✓ Adaptive Cruise</li>
+                                <li>✓ Wireless CarPlay</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 4 - Toyota Fortuner -->
+                <div class="vehicle-listing" data-brand="toyota" data-price="550000" data-type="suv">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://i.pinimg.com/736x/90/f2/7c/90f27c871f54738d0538568e5b05be7c.jpg" alt="Toyota Fortuner" id="toyota-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://i.pinimg.com/736x/e8/f5/4a/e8f54a0370f40eb8d65094adc5778167.jpg" alt="Fortuner Front" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/736x/f2/09/92/f20992b741e5a167c15f2104076968ab.jpg" alt="Fortuner Interior" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/b5/90/01/b59001c4dcb9fb435b7b18ee386cc219.jpg" alt="Fortuner Side" onclick="changeImage('toyota-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2022 Toyota Fortuner 2.8 GD-6 4x4</h2>
+                        <p class="price">R 550,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2022</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">45,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">Automatic</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Diesel</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Glacier White</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.8L GD-6</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ 4x4 System</li>
+                                <li>✓ 7 Seater</li>
+                                <li>✓ Toyota Connect</li>
+                                <li>✓ Hill Assist</li>
+                                <li>✓ Cruise Control</li>
+                                <li>✓ Roof Rails</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 5 - Ford Ranger -->
+                <div class="vehicle-listing" data-brand="ford" data-price="420000" data-type="bakkie">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://i.pinimg.com/1200x/79/95/9b/79959b1fa67717b964a2eecc7bf7f118.jpg" alt="Ford Ranger" id="ford-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://i.pinimg.com/1200x/4f/b4/60/4fb46053751489b7ba2bab60c9cb4675.jpg" alt="Ranger Front" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/736x/93/f2/e0/93f2e085a8f4274814d72996f3cd8f7d.jpg" alt="Ranger Interior" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/fc/7a/d3/fc7ad392afce4a6f371fb189e18b06ee.jpg" alt="Ranger Rear" onclick="changeImage('ford-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2021 Ford Ranger Wildtrak 2.0 Bi-Turbo</h2>
+                        <p class="price">R 420,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2021</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">55,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">10-Speed Auto</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Diesel</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Sea Grey</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">2.0L Bi-Turbo</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ Wildtrak Package</li>
+                                <li>✓ SYNC 3 System</li>
+                                <li>✓ Roller Shutter</li>
+                                <li>✓ Sports Bar</li>
+                                <li>✓ Lane Keep Assist</li>
+                                <li>✓ Adaptive Cruise</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 6 - Toyota Corolla -->
+                <div class="vehicle-listing" data-brand="toyota" data-price="280000" data-type="sedan">
+                    <div class="vehicle-gallery">
+                        <div class="main-image">
+                            <img src="https://i.pinimg.com/736x/74/61/4d/74614d884940788ce8d1a6ef46fcb8a9.jpg" alt="Toyota Corolla" id="corolla-main">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://i.pinimg.com/736x/5c/7b/7f/5c7b7ffb8774709bc9d64077c21fc129.jpg" alt="Corolla Front" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/736x/91/be/da/91bedae358036da7d56398ff7b43c994.jpg" alt="Corolla Side" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
+                            <img src="https://i.pinimg.com/1200x/04/ce/2b/04ce2b06f828f0bb9a39660be8042770.jpg" alt="Corolla Interior" onclick="changeImage('corolla-main', this.src.replace('w=150', 'w=600'))">
+                        </div>
+                    </div>
+                    <div class="vehicle-details">
+                        <h2>2020 Toyota Corolla Quest 1.8</h2>
+                        <p class="price">R 280,000</p>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Year</span>
+                                <span class="spec-value">2020</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Mileage</span>
+                                <span class="spec-value">60,000 km</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Transmission</span>
+                                <span class="spec-value">Manual</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Fuel Type</span>
+                                <span class="spec-value">Petrol</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Color</span>
+                                <span class="spec-value">Silver</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Engine</span>
+                                <span class="spec-value">1.8L VVT-i</span>
+                            </div>
+                        </div>
+                        <div class="features">
+                            <h4>Features:</h4>
+                            <ul>
+                                <li>✓ Air Conditioning</li>
+                                <li>✓ Power Steering</li>
+                                <li>✓ Central Locking</li>
+                                <li>✓ Electric Windows</li>
+                                <li>✓ Radio/CD Player</li>
+                                <li>✓ ABS Brakes</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn">Enquire Now</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Auto<span>4Sale</span></h3>
+                    <p>Your trusted partner in finding the perfect vehicle since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 123 Main Road, Johannesburg</p>
+                    <p>📞 011 123 4567</p>
+                    <p>✉️ info@auto4sale.co.za</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Auto4Sale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

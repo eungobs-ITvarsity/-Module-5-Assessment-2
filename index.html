@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto4Sale - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Auto<span>4Sale</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="vehicles.html">Vehicles</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Find Your Dream Car Today</h1>
+            <p>Quality vehicles at affordable prices</p>
+            <a href="vehicles.html" class="btn">Browse Vehicles</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Auto4Sale</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to <strong>Auto4Sale</strong>, your trusted partner in finding the perfect vehicle. Established in 2010, we have been serving customers with quality pre-owned and new vehicles for over a decade.</p>
+                    <p>Our mission is to provide exceptional customer service and offer a wide range of vehicles to suit every budget and lifestyle. We believe that everyone deserves to drive a reliable car without breaking the bank.</p>
+                    <h3>Why Choose Us?</h3>
+                    <ul>
+                        <li>✓ Over 500+ satisfied customers</li>
+                        <li>✓ Certified pre-owned vehicles</li>
+                        <li>✓ Flexible financing options</li>
+                        <li>✓ 30-day money-back guarantee</li>
+                        <li>✓ Free vehicle history reports</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500" alt="Car Showroom">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Vehicles Section -->
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Vehicles</h2>
+            <p class="section-subtitle">Check out our top picks this month</p>
+            <div class="vehicle-grid">
+                <!-- Vehicle 1 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400" alt="BMW 3 Series">
+                        <span class="badge">Featured</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2022 BMW 3 Series</h3>
+                        <p class="price">R 650,000</p>
+                        <ul class="specs">
+                            <li>🚗 Sedan</li>
+                            <li>⚙️ Automatic</li>
+                            <li>📏 25,000 km</li>
+                        </ul>
+                        <a href="vehicles.html" class="btn btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400" alt="Mercedes-Benz C-Class">
+                        <span class="badge">Featured</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2021 Mercedes-Benz C-Class</h3>
+                        <p class="price">R 720,000</p>
+                        <ul class="specs">
+                            <li>🚗 Sedan</li>
+                            <li>⚙️ Automatic</li>
+                            <li>📏 30,000 km</li>
+                        </ul>
+                        <a href="vehicles.html" class="btn btn-small">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5?w=400" alt="Volkswagen Golf">
+                        <span class="badge">Featured</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>2023 Volkswagen Golf 8</h3>
+                        <p class="price">R 480,000</p>
+                        <ul class="specs">
+                            <li>🚗 Hatchback</li>
+                            <li>⚙️ DSG</li>
+                            <li>📏 10,000 km</li>
+                        </ul>
+                        <a href="vehicles.html" class="btn btn-small">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="vehicles.html" class="btn">View All Vehicles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Auto<span>4Sale</span></h3>
+                    <p>Your trusted partner in finding the perfect vehicle since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="vehicles.html">Vehicles</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📍 123 Main Road, Johannesburg</p>
+                    <p>📞 011 123 4567</p>
+                    <p>✉️ info@auto4sale.co.za</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Auto4Sale. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
